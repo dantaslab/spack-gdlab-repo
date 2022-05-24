@@ -23,4 +23,6 @@ class PyScoary(PythonPackage):
     depends_on('py-setuptools', type='build')
     depends_on('py-scipy@0.16:',        type=('build', 'run'))
     depends_on('py-argparse',        type=('build', 'run'))
+    depends_on('py-ete3',        type=('build', 'run'))
+    depends_on('py-six',        type=('build', 'run'))
 
