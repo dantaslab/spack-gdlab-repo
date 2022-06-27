@@ -23,7 +23,7 @@
 from spack import *
 
 
-class PyMetaphlan(Package):
+class PyMetaphlan(PythonPackage):
     """Description: MetaPhlAn is a computational tool for profiling the composition of microbial communities (Bacteria, Archaea and Eukaryotes) from metagenomic shotgun sequencing data (i.e. not 16S) with species-level. With the newly added StrainPhlAn module, it is now possible to perform accurate strain-level microbial profiling."""
 
     # URL for your package's homepage.
@@ -35,7 +35,7 @@ class PyMetaphlan(Package):
     # maintainers = ['github_user1', 'github_user2']
 
     # FIXME: Add proper versions and checksums here.
-    # version('3.0.14', sha256='6553a0e7e027e4b26feab0fa50418da45331d318bb1406020b8e6a376b1772c0')
+    version('3.0.14', sha256='6553a0e7e027e4b26feab0fa50418da45331d318bb1406020b8e6a376b1772c0')
 
     # FIXME: Add dependencies if required.
 
@@ -47,10 +47,12 @@ class PyMetaphlan(Package):
     depends_on('py-pandas')
     depends_on('py-scipy')
     depends_on('py-requests')
-    depends_on('py-dendropy')
+    depends_on('py-dendropy@4.2.0:')
     depends_on('py-pysam')
     depends_on('py-cmseq')
     depends_on('py-phylophlan')
+    depends_on('bowtie2@2.3:')
+
 
 
     def build_args(self, spec, prefix):

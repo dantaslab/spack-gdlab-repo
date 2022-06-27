@@ -23,7 +23,7 @@
 from spack import *
 
 
-class PyCmseq(Package):
+class PyCmseq(PythonPackage):
     """CMSeq is a set of commands to provide an interface to .bam files for coverage and sequence consensus. Used as a dependency for py-metaphlan."""
 
     # FIXME: Add a proper url for your package's homepage here.

@@ -4,11 +4,13 @@
 # SPDX-License-Identifier: (Apache-2.0 OR MIT)
 
 
-from spack import *
+from spack.package import *
 
 
 class PyGtdbtk(PythonPackage):
-    """GTDB-Tk is a software toolkit for assigning objective taxonomic classifications to bacterial and archaeal genomes based on the Genome Database Taxonomy (GTDB)."""
+    """GTDB-Tk is a software toolkit for assigning objective taxonomic
+       classifications to bacterial and archaeal genomes based on the Genome
+       Database Taxonomy (GTDB)."""
 
     homepage = "https://github.com/Ecogenomics/GTDBTk"
     pypi     = "gtdbtk/gtdbtk-2.1.0.tar.gz"
