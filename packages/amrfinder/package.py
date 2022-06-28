@@ -1,4 +1,4 @@
-# Copyright 2013-2021 Lawrence Livermore National Security, LLC and other
+# Copyright 2013-2022 Lawrence Livermore National Security, LLC and other
 # Spack Project Developers. See the top-level COPYRIGHT file for details.
 #
 # SPDX-License-Identifier: (Apache-2.0 OR MIT)
@@ -7,7 +7,7 @@
 from spack import *
 
 
-class Amrfinder(Package):
+class Amrfinder(MakefilePackage):
     """NCBI AMRFinderPlus: This software and the accompanying database identify
        acquired antimicrobial resistance genes in bacterial protein and/or
        assembled nucleotide sequences as well as known resistance-associated
