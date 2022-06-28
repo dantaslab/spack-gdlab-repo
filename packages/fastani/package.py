@@ -4,11 +4,12 @@
 # SPDX-License-Identifier: (Apache-2.0 OR MIT)
 
 
-from spack import *
+from spack.package import *
 
 
 class Fastani(AutotoolsPackage):
-    """Fast, alignment-free computation of whole-genome Average Nucleotide Identity (ANI)"""
+    """Fast, alignment-free computation of whole-genome Average Nucleotide
+       Identity (ANI)"""
 
     homepage = "https://github.com/ParBLiSS/FastANI"
     url      = "https://github.com/ParBLiSS/FastANI/archive/v1.33.tar.gz"
@@ -22,5 +23,4 @@ class Fastani(AutotoolsPackage):
     depends_on('automake', type='build')
     depends_on('libtool',  type='build')
     depends_on('m4',       type='build')
-
 
