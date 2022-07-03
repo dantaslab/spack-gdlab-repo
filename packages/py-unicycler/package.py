@@ -1,9 +1,9 @@
-# Copyright 2013-2021 Lawrence Livermore National Security, LLC and other
+# Copyright 2013-2022 Lawrence Livermore National Security, LLC and other
 # Spack Project Developers. See the top-level COPYRIGHT file for details.
 #
 # SPDX-License-Identifier: (Apache-2.0 OR MIT)
 
-from spack import *
+from spack.package import *
 
 
 class PyUnicycler(PythonPackage):
@@ -16,7 +16,6 @@ class PyUnicycler(PythonPackage):
 
     homepage = "https://github.com/rrwick/Unicycler"
     url      = "https://github.com/rrwick/Unicycler/archive/v0.4.5.tar.gz"
-
 
     version('0.5.0', sha256='84a8709c9f2e624225410af702d779ffb0cb06f7c22c20e1f01b989945e08a47')
     version('0.4.9', sha256='84bea8f3e8f99a1e63e5230ffe474a696db8caa67569c3a96ae12906d32a35eb')
