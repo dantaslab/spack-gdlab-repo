@@ -1,10 +1,10 @@
-# Copyright 2013-2022 Lawrence Livermore National Security, LLC and other
+# Copyright 2013-2021 Lawrence Livermore National Security, LLC and other
 # Spack Project Developers. See the top-level COPYRIGHT file for details.
 #
 # SPDX-License-Identifier: (Apache-2.0 OR MIT)
 
 
-from spack import *
+from spack.package import *
 
 
 class Amrfinder(MakefilePackage):
@@ -25,8 +25,11 @@ class Amrfinder(MakefilePackage):
     depends_on('hmmer')
     depends_on('curl')
 
-    def edit(self, spec, prefix):
-        mkdirp(prefix.bin)
-        mkdirp(prefix.share)
-        env['INSTALL_DIR'] = prefix.bin
-        env['DEFAULT_DB_DIR'] = prefix.share
+    def setup_build_environment(self, env):
+        env.set('INSTALL_DIR', prefix.bin)
+        env.set('DEFAULT_DB_DIR', prefix.share)
+
+    @run_before('build')
+    def create_bin_and_share(self):
+        mkdirp(self.spec.prefix.bin)
+        mkdirp(self.spec.prefix.share)
