@@ -1,10 +1,10 @@
-# Copyright 2013-2021 Lawrence Livermore National Security, LLC and other
+# Copyright 2013-2022 Lawrence Livermore National Security, LLC and other
 # Spack Project Developers. See the top-level COPYRIGHT file for details.
 #
 # SPDX-License-Identifier: (Apache-2.0 OR MIT)
 
 
-from spack import *
+from spack.package import *
 
 
 class PyPanaroo(PythonPackage):
@@ -17,22 +17,22 @@ class PyPanaroo(PythonPackage):
 
     depends_on('python@3.6.0:', type=('build', 'run'))
     depends_on('py-setuptools', type='build')
-    depends_on('py-biopython',        type=('build', 'run'))
-    depends_on('py-numpy',        type=('build', 'run'))
-    depends_on('py-scipy',        type=('build', 'run'))
-    depends_on('py-matplotlib',        type=('build', 'run'))
-    depends_on('py-plotly',        type=('build', 'run'))
-    depends_on('py-dendropy',        type=('build', 'run'))
-    depends_on('py-sklearn',        type=('build', 'run'))
-    depends_on('py-networkx',        type=('build', 'run'))
-    depends_on('py-gffutils',        type=('build', 'run'))
-    depends_on('py-edlib',        type=('build', 'run'))
-    depends_on('py-joblib',        type=('build', 'run'))
-    depends_on('py-tqdm',        type=('build', 'run'))
-    depends_on('py-intbitset',        type=('build', 'run'))
-    depends_on('cdhit',        type=('build', 'run'))
+    depends_on('py-biopython',  type=('build', 'run'))
+    depends_on('py-numpy',      type=('build', 'run'))
+    depends_on('py-scipy',      type=('build', 'run'))
+    depends_on('py-matplotlib', type=('build', 'run'))
+    depends_on('py-plotly',     type=('build', 'run'))
+    depends_on('py-dendropy',   type=('build', 'run'))
+    depends_on('py-sklearn',    type=('build', 'run'))
+    depends_on('py-networkx',   type=('build', 'run'))
+    depends_on('py-gffutils',   type=('build', 'run'))
+    depends_on('py-edlib',      type=('build', 'run'))
+    depends_on('py-joblib',     type=('build', 'run'))
+    depends_on('py-tqdm',       type=('build', 'run'))
+    depends_on('py-intbitset',  type=('build', 'run'))
+    depends_on('cdhit',         type=('build', 'run'))
     depends_on('prokka',        type=('build', 'run'))
-    depends_on('prank',        type=('build', 'run'))
-    depends_on('mafft',        type=('build', 'run'))
-    depends_on('clustal-omega',        type=('build', 'run'))
-    depends_on('mash',        type=('build', 'run'))
+    depends_on('prank',         type=('build', 'run'))
+    depends_on('mafft',         type=('build', 'run'))
+    depends_on('clustal-omega', type=('build', 'run'))
+    depends_on('mash',          type=('build', 'run'))
