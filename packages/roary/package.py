@@ -15,44 +15,35 @@ class Roary(Package):
 
     version('3.13.0', sha256='375f83c8750b0f4dea5b676471e73e94f3710bc3a327ec88b59f25eae1c3a1e8')
 
-    depends_on('perl@5.8:5.9,5.11.5.13:',   type=('build', 'run'))
-    depends_on('perl-array-utils',   type=('build', 'run'))
-    depends_on('perl-bioperl',   type=('build', 'run'))
-    depends_on('perl-exception-class',   type=('build', 'run'))
-    depends_on('perl-graph',   type=('build', 'run'))
-    depends_on('perl-file-slurper',   type=('build', 'run'))
-    depends_on('perl-file-which',   type=('build', 'run'))
-    depends_on('perl-log-log4perl',   type=('build', 'run'))
-    depends_on('perl-moose',   type=('build', 'run'))
-    depends_on('perl-text-csv',   type=('build', 'run'))
-    depends_on('perl-perlio-utf8-strict',   type=('build', 'run'))
-    depends_on('perl-devel-overloadinfo',   type=('build', 'run'))
-    
-    #TODO add the following perl dependencies:
-    # File::Basename
-    # File::Copy
-    # File::Find::Rule
-    # File::Grep
-    # File::Path
-    # File::Spec
-    # File::Temp
-    # FindBin
-    # Getopt::Long
-    # Graph::Writer::Dot
-    # List::Util
-    # Moose::Role
-    # Digest::MD5::File
+    # perl dependencies
+    depends_on('perl@5.8:5.9,5.11.5.13:', type=('build', 'run'))
+    depends_on('perl-array-utils',        type=('build', 'run'))
+    depends_on('perl-bioperl',            type=('build', 'run'))
+    depends_on('perl-exception-class',    type=('build', 'run'))
+    depends_on('perl-graph',              type=('build', 'run'))
+    depends_on('perl-file-slurper',       type=('build', 'run'))
+    depends_on('perl-file-which',         type=('build', 'run'))
+    depends_on('perl-log-log4perl',       type=('build', 'run'))
+    depends_on('perl-moose',              type=('build', 'run'))
+    depends_on('perl-text-csv',           type=('build', 'run'))
+    depends_on('perl-perlio-utf8-strict', type=('build', 'run'))
+    depends_on('perl-devel-overloadinfo', type=('build', 'run'))
+    depends_on('perl-graph-readwrite',    type=('build', 'run'))
+    depends_on('perl-file-grep',          type=('build', 'run'))
+    depends_on('perl-file-path',          type=('build', 'run'))
+    depends_on('perl-file-temp',          type=('build', 'run'))
+    depends_on('perl-pathtools',          type=('build', 'run'))
+    depends_on('perl-findbin',            type=('build', 'run'))
+    depends_on('perl-getopt-long',        type=('build', 'run'))
+    depends_on('perl-scalar-list-utils',  type=('build', 'run'))
 
-    depends_on('bedtools2',   type=('build', 'run'))
-    depends_on('cdhit',   type=('build', 'run'))
-    depends_on('blast-plus',   type=('build', 'run'))
-    depends_on('mcl',   type=('build', 'run'))
+    # external dependencies
+    depends_on('bedtools2',  type=('build', 'run'))
+    depends_on('cdhit',      type=('build', 'run'))
+    depends_on('blast-plus', type=('build', 'run'))
+    depends_on('mcl',        type=('build', 'run'))
     depends_on('parallel',   type=('build', 'run'))
-    depends_on('prank',   type=('build', 'run'))
-    depends_on('mafft',   type=('build', 'run'))
+    depends_on('prank',      type=('build', 'run'))
+    depends_on('mafft',      type=('build', 'run'))
     depends_on('fasttree',   type=('build', 'run'))
     
-    def install(self, spec, prefix):
-        # FIXME: Unknown build system
-        make()
-        make('install')
