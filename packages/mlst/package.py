@@ -11,11 +11,11 @@
 # next to all the things you'll want to change. Once you've handled
 # them, you can save this file and test your package like this:
 #
-#     spack install any2fasta
+#     spack install mlst
 #
 # You can edit this file again by typing:
 #
-#     spack edit any2fasta
+#     spack edit mlst
 #
 # See the Spack documentation for more information on packaging.
 # ----------------------------------------------------------------------------
@@ -23,13 +23,24 @@
 from spack.package import *
 
 
-class Any2fasta(Package):
+class Mlst(Package):
     """FIXME: Put a proper description of your package here."""
 
     # FIXME: Add a proper url for your package's homepage here.
     homepage = "https://www.example.com"
-    url = "https://github.com/tseemann/any2fasta/archive/refs/tags/v0.4.2.tar.gz"
+    url = "https://github.com/tseemann/mlst/archive/refs/tags/v2.22.1.tar.gz"
 
-    version("0.4.2", sha256="e4cb2ddccda6298f5b0aee0c10184a75307a08b584d2abbfbf0d59d37b197e73")
+    # FIXME: Add a list of GitHub accounts to
+    # notify when the package is updated.
+    # maintainers = ["github_user1", "github_user2"]
 
-    depends_on("perl@5.10:", type=("build", "run"))
+    version("2.22.1", sha256="a8f64d7cb961a8e422e96a19309ad8707f8792d9f755a9e5a1f5742986d19bca")
+
+    depends_on("any2fasta", type=("build", "run"))
+    depends_on("blast-plus", type=("build", "run"))
+    depends_on("perl@5.26:", type=("build", "run"))
+    depends_on("perl-bioperl@1.7.2:", type=("build", "run"))
+    depends_on("perl-moo", type=("build", "run"))
+    depends_on("perl-list-moreutils", type=("build", "run"))
+    depends_on("perl-json", type=("build", "run"))
+    depends_on("zlib", type=("build", "run"))
