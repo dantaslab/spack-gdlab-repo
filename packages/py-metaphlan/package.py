@@ -1,61 +1,40 @@
-# Copyright 2013-2021 Lawrence Livermore National Security, LLC and other
+# Copyright 2013-2022 Lawrence Livermore National Security, LLC and other
 # Spack Project Developers. See the top-level COPYRIGHT file for details.
 #
 # SPDX-License-Identifier: (Apache-2.0 OR MIT)
 
-# ----------------------------------------------------------------------------
-# If you submit this package back to Spack as a pull request,
-# please first remove this boilerplate and all FIXME comments.
-#
-# This is a template package file for Spack.  We've put "FIXME"
-# next to all the things you'll want to change. Once you've handled
-# them, you can save this file and test your package like this:
-#
-#     spack install py-metaphlan
-#
-# You can edit this file again by typing:
-#
-#     spack edit py-metaphlan
-#
-# See the Spack documentation for more information on packaging.
-# ----------------------------------------------------------------------------
 
-from spack import *
+from spack.package import *
 
 
 class PyMetaphlan(PythonPackage):
-    """Description: MetaPhlAn is a computational tool for profiling the composition of microbial communities (Bacteria, Archaea and Eukaryotes) from metagenomic shotgun sequencing data (i.e. not 16S) with species-level. With the newly added StrainPhlAn module, it is now possible to perform accurate strain-level microbial profiling."""
+    """MetaPhlAn is a computational tool for profiling the composition of
+    microbial communities (Bacteria, Archaea and Eukaryotes) from metagenomic
+    shotgun sequencing data (i.e. not 16S) with species-level."""
 
-    # URL for your package's homepage.
-    homepage = "https://github.com/biobakery/MetaPhlAn#:~:text=Description-,MetaPhlAn%20is%20a%20computational%20tool%20for%20profiling%20the%20composition%20of,accurate%20strain%2Dlevel%20microbial%20profiling."
-    url      = "https://github.com/biobakery/MetaPhlAn/archive/refs/tags/3.0.14.tar.gz"
+    homepage = "https://github.com/biobakery/MetaPhlAn/"
+    pypi = "MetaPhlAn/MetaPhlAn-4.0.2.tar.gz"
 
-    # FIXME: Add a list of GitHub accounts to
-    # notify when the package is updated. - no updates
-    # maintainers = ['github_user1', 'github_user2']
+    version("4.0.2", sha256="2549fdf2de97a0024551a7bb8d639613b8a7b612054506c88cdb719353f466ff")
+    version("3.1.0", sha256="4e7a7a36d07ed6f4f945afc4216db7f691d44a22b059c2404c917a160a687a6b")
 
-    # FIXME: Add proper versions and checksums here.
-    version('3.0.14', sha256='6553a0e7e027e4b26feab0fa50418da45331d318bb1406020b8e6a376b1772c0')
-
-    # FIXME: Add dependencies if required.
-
-    depends_on('python@3:')
-    depends_on('py-numpy')
-    depends_on('py-h5py')
-    depends_on('py-biom-format')
-    depends_on('py-biopython')
-    depends_on('py-pandas')
-    depends_on('py-scipy')
-    depends_on('py-requests')
-    depends_on('py-dendropy@4.2.0:')
-    depends_on('py-pysam')
-    depends_on('py-cmseq')
-    depends_on('py-phylophlan')
-    depends_on('bowtie2@2.3:')
-
-
-
-    def build_args(self, spec, prefix):
-        # FIXME: Unknown build system
-        args = []
-        return args
+    depends_on("python@3.7:", type=("build", "run"))
+    depends_on("py-setuptools", type="build")
+    depends_on("py-numpy", type=("build", "run"))
+    depends_on("py-h5py", type=("build", "run"))
+    depends_on("py-biom-format", type=("build", "run"))
+    depends_on("py-biopython", type=("build", "run"))
+    depends_on("py-pandas", type=("build", "run"))
+    depends_on("py-scipy", type=("build", "run"))
+    depends_on("py-hclust2", type=("build", "run"), when="@4.0.2:")
+    depends_on("py-requests", type=("build", "run"))
+    depends_on("py-dendropy", type=("build", "run"))
+    depends_on("py-pysam", type=("build", "run"))
+    depends_on("py-cmseq", type=("build", "run"))
+    depends_on("py-phylophlan", type=("build", "run"))
+    depends_on("py-matplotlib", type=("build", "run"))
+    depends_on("bowtie2@2.3:", type=("build", "run"))
+    depends_on("muscle@3.8.1551:", type=("build", "run"))
+    depends_on("blast-plus@2.6:", type=("build", "run"))
+    depends_on("raxml@8.2.10:", type=("build", "run"))
+    depends_on("samtools@1.9:", type=("build", "run"))
