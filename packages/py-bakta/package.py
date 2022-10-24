@@ -14,6 +14,8 @@ class PyBakta(PythonPackage):
     homepage = "https://github.com/oschwengers/bakta"
     pypi = "bakta/bakta-1.5.1.tar.gz"
 
+    maintainers = ["oschwengers"]
+
     version("1.5.1", sha256="36781612c4eaa99e6e24a00e8ab5b27dadf21c98ae6d16432f3e78c96a4adb5d")
 
     depends_on("python@3.8:", type=("build", "run"))
@@ -25,7 +27,7 @@ class PyBakta(PythonPackage):
     depends_on("trnascan-se@2.0.8:", type=("build", "run"))
     depends_on("aragorn@1.2.38:", type=("build", "run"))
     depends_on("infernal@1.1.4:", type=("build", "run"))
-    depends_on("pilercr", type=("build", "run"))
+    depends_on("pilercr@1.06:", type=("build", "run"))
     depends_on("prodigal@2.6.3:", type=("build", "run"))
     depends_on("hmmer@3.3.2:", type=("build", "run"))
     depends_on("diamond@2.0.14:", type=("build", "run"))
