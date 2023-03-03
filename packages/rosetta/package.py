@@ -28,4 +28,4 @@ class Rosetta(Package):
     # crack at it (I won't)
     def install(self, spec, prefix):
         mkdir(prefix.bin)
-        install_tree("./main/source/bin", prefix.bin)
+        install_tree("./main/source/bin", prefix.bin, symlinks=False)
