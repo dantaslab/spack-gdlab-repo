@@ -21,7 +21,7 @@ class Rosetta(Package):
     version("3.12", "0b2462bee2d41053ec8fca7ee1fa632d")
 
     def url_for_version(self, version):
-        return "file://{0}/rosetta_linux_bin_{1}_bundle.tgz".format(os.getcwd(), version)
+        return "file://{0}/rosetta_bin_linux_{1}_bundle.tgz".format(os.getcwd(), version)
 
     # compiling is turning into a nuge pain, so I'm just going to copy the
     # pre-compiled static binaries. Maybe when I have more time I'll take a
