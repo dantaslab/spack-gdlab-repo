@@ -19,7 +19,7 @@ class RosettaddgpredictionGit(PythonPackage):
     version("master", branch="master")
 
     # non-python deps
-    #depends_on("rosetta", type="run")
+    depends_on("rosetta", type="run")
 
     # python-deps
     depends_on("py-biopython", type=("build", "run"))
