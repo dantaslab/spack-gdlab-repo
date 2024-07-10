@@ -15,6 +15,8 @@ class PyMetaphlan(PythonPackage):
     homepage = "https://github.com/biobakery/MetaPhlAn/"
     pypi = "MetaPhlAn/MetaPhlAn-4.0.2.tar.gz"
 
+    version('4.1.1', sha256='b7b3ce7a0a4fab8f1d87fb19f53143ffe2de989fb2c13649ddc297b480a4ee54')
+    version('4.1.0', sha256='b6df31352f9230ac0463c571d827e80506b7ee1c428c4eab5f361a7cca95bf51')
     version("4.0.2", sha256="2549fdf2de97a0024551a7bb8d639613b8a7b612054506c88cdb719353f466ff")
     version("3.1.0", sha256="4e7a7a36d07ed6f4f945afc4216db7f691d44a22b059c2404c917a160a687a6b")
 
