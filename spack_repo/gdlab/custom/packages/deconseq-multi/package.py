@@ -3,21 +3,17 @@
 #
 # SPDX-License-Identifier: (Apache-2.0 OR MIT)
 
-
 from spack import *
-
 
 class DeconseqMulti(Package):
     """The DeconSeq tool can be used to automatically detect and efficiently
     remove sequence contaminations from genomic and metagenomic datasets; optimized for multithreaded usage."""
 
     homepage = "https://github.com/dantaslab/deconseq-multi"
-    url      = "https://github.com/dantaslab/deconseq-multi/releases/download/v1.0.0/deconseq-multi-v1.0.0.tar.gz"
-
-    version('1.0.0', sha256='d40ea902d9f0ea86e7e0890d948f1e9516d767f98011d588cd6828c3b125309d')
-
+    url = "/ref/gdlab/software/custom-packages/deconseq-multi-v1.0.1.tar.gz"
+    version('1.0.1', sha256='334d5b8d99fb888d2efa5ee378911c2cbfc875e42589ff66d45a0d77a15b356d')
+    
     depends_on("perl@5:")
-
     def install(self, spec, prefix):
         filter_file(r"#!/usr/bin/perl", "#!/usr/bin/env perl", "deconseq.pl")
         filter_file(r"#!/usr/bin/perl", "#!/usr/bin/env perl", "splitFasta.pl")

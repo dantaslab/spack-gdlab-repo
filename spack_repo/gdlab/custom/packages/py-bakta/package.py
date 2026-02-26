@@ -15,7 +15,10 @@ class PyBakta(PythonPackage):
     pypi = "bakta/bakta-1.5.1.tar.gz"
 
     maintainers = ["oschwengers"]
-
+    
+    version("1.9.4", sha256="10330a10e459144dc78daa26f3a73674799706e2e1653e080366b1bbb9e5a5d9")
+    version("1.9.3", sha256="795e6a1f139623cc988d2a867ffe112edf2260d218cc7e6eee9f0cc25894b484")
+    version("1.8.1", sha256="029a099376b6bf05183b53449c25ed522b72acab7b64cdbfb958f3803878194f")
     version("1.5.1", sha256="36781612c4eaa99e6e24a00e8ab5b27dadf21c98ae6d16432f3e78c96a4adb5d")
 
     depends_on("python@3.8:", type=("build", "run"))
