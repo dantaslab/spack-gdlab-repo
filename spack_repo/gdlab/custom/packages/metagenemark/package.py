@@ -5,6 +5,7 @@
 
 
 from spack import *
+from spack_repo.builtin.build_systems.generic import Package
 import os
 
 class Metagenemark(Package):

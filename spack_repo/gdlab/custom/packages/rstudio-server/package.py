@@ -6,7 +6,8 @@
 import os
 
 from spack import *
-from spack.pkg.builtin.boost import Boost
+from spack_repo.builtin.build_systems.cmake import CMakePackage
+from spack_repo.builtin.packages.boost.package import Boost
 
 class RstudioServer(CMakePackage):
     """RStudio Server is an integrated development environment (IDE) for R."""

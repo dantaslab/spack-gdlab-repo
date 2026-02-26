@@ -5,6 +5,7 @@
 import sys
 
 from spack.build_environment import MakeExecutable, determine_number_of_jobs
+from spack_repo.builtin.build_systems.generic import Package
 from spack.package import *
 from spack.util.executable import which_string
 

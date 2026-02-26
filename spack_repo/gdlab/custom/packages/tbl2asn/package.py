@@ -5,6 +5,7 @@
 
 from os import chmod
 
+from spack_repo.builtin.build_systems.generic import Package
 from spack import *
 
 

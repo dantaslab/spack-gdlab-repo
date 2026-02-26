@@ -7,6 +7,9 @@ import sys
 import tempfile
 
 from spack.operating_systems.mac_os import macos_version
+from spack_repo.builtin.build_systems.cuda import CudaPackage
+from spack_repo.builtin.build_systems.generic import Package
+from spack_repo.builtin.build_systems.rocm import ROCmPackage
 from spack.package import *
 
 
