@@ -1,18 +1,25 @@
-# Copyright 2013-2022 Lawrence Livermore National Security, LLC and other
-# Spack Project Developers. See the top-level COPYRIGHT file for details.
+# Copyright Spack Project Developers. See COPYRIGHT file for details.
 #
 # SPDX-License-Identifier: (Apache-2.0 OR MIT)
 
-from spack import *
+from spack_repo.builtin.build_systems.generic import Package
+
+from spack.package import *
+
 
 class DeconseqMulti(Package):
     """The DeconSeq tool can be used to automatically detect and efficiently
     remove sequence contaminations from genomic and metagenomic datasets; optimized for multithreaded usage."""
 
     homepage = "https://github.com/dantaslab/deconseq-multi"
-    url = "/ref/gdlab/software/custom-packages/deconseq-multi-v1.0.1.tar.gz"
-    version('1.0.1', sha256='334d5b8d99fb888d2efa5ee378911c2cbfc875e42589ff66d45a0d77a15b356d')
+    url = "https://github.com/dantaslab/deconseq-multi/releases/download/v1.0.0/deconseq-multi-v1.0.0.tar.gz"
     
+    maintainers("caelanjmiller")
+
+    license("MIT", checked_by="caelanjmiller")
+
+    version("1.0.0", sha256="d40ea902d9f0ea86e7e0890d948f1e9516d767f98011d588cd6828c3b125309d")
+
     depends_on("perl@5:")
     def install(self, spec, prefix):
         filter_file(r"#!/usr/bin/perl", "#!/usr/bin/env perl", "deconseq.pl")
